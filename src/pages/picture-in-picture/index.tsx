@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Loader2,
   Maximize2,
@@ -8,12 +6,12 @@ import {
   Pause,
   Volume2,
   VolumeX,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { useVideoPlayer } from "@/shared/hooks/useVideoPlayer";
+} from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import { useVideoPlayer } from '@/shared/hooks/useVideoPlayer'
 
-const PictureInPicturePlayer = () => {
+export const PictureInPicturePlayer = () => {
   const {
     videoRef,
     isPiPSupported,
@@ -26,37 +24,37 @@ const PictureInPicturePlayer = () => {
     togglePlay,
     toggleMute,
     togglePiP,
-  } = useVideoPlayer();
+  } = useVideoPlayer()
 
   // Fallback for unsupported PiP
   const unsupportedMessage =
-    "⚠️ Your browser doesn't support the Document Picture-in-Picture API yet.";
+    "⚠️ Your browser doesn't support the Document Picture-in-Picture API yet."
 
   return (
-    <Card className="w-full max-w-3xl mx-auto overflow-hidden">
+    <Card className="mx-auto w-full max-w-3xl overflow-hidden">
       <CardContent className="p-0">
         <div className="relative bg-black">
           {isLoading && (
             <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-              <Loader2 className="w-8 h-8 text-white animate-spin" />
+              <Loader2 className="h-8 w-8 animate-spin text-white" />
             </div>
           )}
           <video
             ref={videoRef}
-            className="w-full aspect-video"
+            className="aspect-video w-full"
             src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
             poster="/placeholder.svg?height=400&width=600"
             playsInline
             onLoadedData={() => setIsLoading(false)}
-            onError={(e) => {
-              setIsLoading(false);
-              console.error("Video error:", e);
+            onError={e => {
+              setIsLoading(false)
+              console.error('Video error:', e)
             }}
           />
-          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
             <div className="flex flex-col gap-2">
               {error && (
-                <div className="px-3 py-1 text-sm text-red-200 bg-red-500/20 rounded-md">
+                <div className="rounded-md bg-red-500/20 px-3 py-1 text-sm text-red-200">
                   {error}
                 </div>
               )}
@@ -66,14 +64,14 @@ const PictureInPicturePlayer = () => {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="text-white hover:text-white hover:bg-white/20"
+                    className="text-white hover:bg-white/20 hover:text-white"
                     onClick={togglePlay}
-                    aria-label={isPlaying ? "Pause video" : "Play video"}
+                    aria-label={isPlaying ? 'Pause video' : 'Play video'}
                   >
                     {isPlaying ? (
-                      <Pause className="w-5 h-5" />
+                      <Pause className="h-5 w-5" />
                     ) : (
-                      <Play className="w-5 h-5" />
+                      <Play className="h-5 w-5" />
                     )}
                   </Button>
 
@@ -81,14 +79,14 @@ const PictureInPicturePlayer = () => {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="text-white hover:text-white hover:bg-white/20"
+                    className="text-white hover:bg-white/20 hover:text-white"
                     onClick={toggleMute}
-                    aria-label={isMuted ? "Unmute video" : "Mute video"}
+                    aria-label={isMuted ? 'Unmute video' : 'Mute video'}
                   >
                     {isMuted ? (
-                      <VolumeX className="w-5 h-5" />
+                      <VolumeX className="h-5 w-5" />
                     ) : (
-                      <Volume2 className="w-5 h-5" />
+                      <Volume2 className="h-5 w-5" />
                     )}
                   </Button>
                 </div>
@@ -98,18 +96,18 @@ const PictureInPicturePlayer = () => {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="text-white hover:text-white hover:bg-white/20"
+                    className="text-white hover:bg-white/20 hover:text-white"
                     onClick={togglePiP}
                     aria-label={
                       isPiPActive
-                        ? "Exit Picture-in-Picture mode"
-                        : "Enter Picture-in-Picture mode"
+                        ? 'Exit Picture-in-Picture mode'
+                        : 'Enter Picture-in-Picture mode'
                     }
                   >
                     {isPiPActive ? (
-                      <Minimize2 className="w-5 h-5" />
+                      <Minimize2 className="h-5 w-5" />
                     ) : (
-                      <Maximize2 className="w-5 h-5" />
+                      <Maximize2 className="h-5 w-5" />
                     )}
                   </Button>
                 )}
@@ -119,7 +117,7 @@ const PictureInPicturePlayer = () => {
         </div>
 
         {/* Feature Description */}
-        <div className="p-6 space-y-4">
+        <div className="space-y-4 p-6">
           <h2 className="text-2xl font-bold">
             Document Picture-in-Picture Demo
           </h2>
@@ -129,14 +127,12 @@ const PictureInPicturePlayer = () => {
             floating window maintains custom controls and styling.
           </p>
           {!isPiPSupported && (
-            <span className="block mt-2 text-destructive">
+            <span className="mt-2 block text-destructive">
               {unsupportedMessage}
             </span>
           )}
         </div>
       </CardContent>
     </Card>
-  );
-};
-
-export default PictureInPicturePlayer;
+  )
+}
