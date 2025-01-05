@@ -1,8 +1,9 @@
-import "./App.css";
-import PictureInPicturePlayer from "@/features/pip-player/PictureInPicturePlayer";
+import { RouterProvider } from 'react-router'
+import './App.css'
+import { router } from '@/routes/routes'
 
 function App() {
-  return <PictureInPicturePlayer />;
+  return <RouterProvider router={router} />
 }
 
-export default App;
+export default App
