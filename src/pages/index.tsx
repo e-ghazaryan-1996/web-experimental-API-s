@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router'
-import { VideoIcon } from 'lucide-react'
+
 import {
   Card,
   CardContent,
@@ -8,25 +8,9 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { APP_ROUTES } from '@/constant/routes'
+import { apiExamples } from '@/constant/url-examples'
 
 export const HomePage = () => {
-  const apiExamples = [
-    {
-      category: 'Media',
-      items: [
-        {
-          title: 'Document Picture-in-Picture API',
-          description:
-            'The Picture-in-Picture (PiP) API enables developers to display videos in a floating, resizable window that stays on top of other windows.',
-          path: APP_ROUTES.PIP,
-          icon: <VideoIcon className="h-6 w-6" />,
-          experimental: true,
-        },
-      ],
-    },
-  ]
-
   return (
     <>
       {/* Hero Section */}
