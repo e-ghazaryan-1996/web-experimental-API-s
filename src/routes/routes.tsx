@@ -2,7 +2,9 @@ import { RootLayout } from '@/layouts/Layout'
 import { HomePage } from '@/pages'
 import { NotFoundPage } from '@/pages/not-found'
 import { PictureInPicturePlayer } from '@/pages/picture-in-picture'
+import { ContactPickerPage } from '@/pages/contact-picker'
 import { createBrowserRouter } from 'react-router'
+import { URLPatternDemo } from '@/pages/url-patern'
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +18,14 @@ export const router = createBrowserRouter([
       {
         path: '/picture-in-picture',
         element: <PictureInPicturePlayer />,
+      },
+      {
+        path: '/contact-picker',
+        element: <ContactPickerPage />,
+      },
+      {
+        path: '/url-pattern',
+        element: <URLPatternDemo />,
       },
       {
         path: '*',

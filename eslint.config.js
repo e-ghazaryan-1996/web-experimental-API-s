@@ -55,14 +55,16 @@ export default tseslint.config(
     },
     rules: {
       // set of custom rules
-      'no-console': 'warn',
+      'no-console': 'off',
       'react/button-has-type': 'warn',
       'react/react-in-jsx-scope': ['off'],
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
       ],
+      'jsx-a11y/heading-has-content': "off",
       'jsx-a11y/media-has-caption': 'off',
+      'react-refresh/only-export-components': "off"
     },
   }
 )

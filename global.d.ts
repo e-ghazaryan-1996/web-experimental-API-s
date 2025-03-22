@@ -2,15 +2,15 @@ declare global {
   interface Window {
     documentPictureInPicture: {
       requestWindow: (options?: {
-        width?: number;
-        height?: number;
-      }) => Promise<DocumentPictureInPictureWindow>;
-    };
+        width?: number
+        height?: number
+      }) => Promise<DocumentPictureInPictureWindow>
+    }
   }
 }
 
 export interface DocumentPictureInPictureWindow extends Window {
-  document: Document;
+  document: Document
 }
 
-export {};
+export {}
