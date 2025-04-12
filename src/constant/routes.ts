@@ -4,4 +4,5 @@ export const APP_ROUTES = {
   PIP: '/picture-in-picture',
   CONTACT_PICKER: '/contact-picker',
   URL_PATTERN: '/url-pattern',
+  WINDOW_MANAGEMENT: '/window-management',
 } as const

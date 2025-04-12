@@ -13,6 +13,14 @@ export const apiExamples = [
         icon: <VideoIcon className="h-6 w-6" />,
         experimental: true,
       },
+      {
+        title: 'Window Management API',
+        path: APP_ROUTES.WINDOW_MANAGEMENT,
+        description:
+          'The Window Management API allows web applications to manage and control windows across multiple screens.',
+        icon: <VideoIcon className="h-6 w-6" />,
+        experimental: true,
+      },
     ],
   },
   {
