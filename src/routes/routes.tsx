@@ -5,6 +5,7 @@ import { PictureInPicturePlayer } from '@/pages/picture-in-picture'
 import { ContactPickerPage } from '@/pages/contact-picker'
 import { createBrowserRouter } from 'react-router'
 import { URLPatternDemo } from '@/pages/url-patern'
+import WindowManagementDemo from '@/pages/window-managment'
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: '/url-pattern',
         element: <URLPatternDemo />,
+      },
+      {
+        path: '/window-management',
+        element: <WindowManagementDemo />,
       },
       {
         path: '*',
